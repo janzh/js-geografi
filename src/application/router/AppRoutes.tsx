@@ -1,5 +1,5 @@
 import RoutePaths from "@src/application/router/routesPaths";
-import CapitalsPage from "@src/features/capitals/CapitalsPage/CapitalsPage";
+import CapitalsPage from "@src/features/capitals/capitals-page/CapitalsPage/CapitalsPage";
 import HomePage from "@src/features/home/HomePage/HomePage";
 import { Navigate, RouteObject } from "react-router-dom";
 
