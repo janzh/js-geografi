@@ -1,5 +1,3 @@
-// const countriesEl = document.querySelector('#countries')
-
 import countries from "../data/countries.js";
 
 const countriesEl = document.createElement('div');
