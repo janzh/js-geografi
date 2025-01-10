@@ -1,2 +1,2 @@
-# purejs-geografi
+# js-geografi
 Gjett verdens hovedsteder
