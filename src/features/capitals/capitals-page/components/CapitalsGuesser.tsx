@@ -47,13 +47,19 @@ const CapitalsGuesser = () => {
 
   return (
     <div className="capitalsGuesser">
-      <section className="block">
+      <form
+        className="block"
+        onSubmit={(event) => {
+          event.preventDefault();
+          checkAnswer();
+        }}
+      >
         <p>Land: {countriesUnanswered[currentCountryIndex].country}</p>
         <label htmlFor="input-answer">Hovedstad:</label>
         <input id="input-answer" onChange={changeAnswer} />
-        <button onClick={checkAnswer}>Sjekk</button>
+        <button type="submit">Sjekk</button>
         {feedback && <p>{feedback}</p>}
-      </section>
+      </form>
       <section className="block">
         <button onClick={nextAnswer}>Neste</button>
         <button onClick={reset}>Start på nytt</button>
