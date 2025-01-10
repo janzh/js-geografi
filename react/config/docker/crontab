@@ -1,0 +1,6 @@
+# NB! Ikke fjern den tomme linjen på slutten! Den er påkrevd for å kunne kjøre cron-jobben.
+#
+# Kall BetterStack-endepunkt for hjerteslag hvert minutt
+#
+* * * * * curl $BETTERSTACK_HEARTBEAT_URL >> /home/nginx/betterstack-cron.log 2>&1
+
