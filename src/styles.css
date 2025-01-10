@@ -1,0 +1,15 @@
+:root{
+    --font-base: 16px
+}
+
+#countries {
+    margin-bottom: calc(var(--font-base) * 2);
+}
+
+.country {
+    margin-bottom: calc(var(--font-base) * 1);
+
+    span:not(:last-child) {
+        margin-right: calc(var(--font-base) * 0.5);
+    }
+}

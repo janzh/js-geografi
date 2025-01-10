@@ -8,11 +8,11 @@ countries.forEach(country => {
     countryEl.className = 'country';
     countriesEl.appendChild(countryEl)
 
-    const nameNode = document.createElement('p');
+    const nameNode = document.createElement('span');
     nameNode.innerHTML = country.name
     countryEl.appendChild(nameNode);
 
-    const capital = document.createElement('p');
+    const capital = document.createElement('span');
     capital.innerHTML = country.capital;
     countryEl.appendChild(capital);
 
