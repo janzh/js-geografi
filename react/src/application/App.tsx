@@ -1,6 +1,8 @@
+import AppRouter from "@src/application/router/AppRouter";
+
 const App = () => (
   <div className="app">
-    <div>Hello world!</div>
+    <AppRouter />
   </div>
 );
 export default App;
