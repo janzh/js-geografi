@@ -44,6 +44,8 @@ const CapitalsGuesser = () => {
     } else {
       setFeedback("Du har svart på alle verdens land");
     }
+
+    setAnswer("");
   };
 
   const reset = () => {
@@ -67,7 +69,7 @@ const CapitalsGuesser = () => {
       >
         <p>Land: {countriesUnanswered[currentCountryIndex].country}</p>
         <label htmlFor="input-answer">Hovedstad:</label>
-        <input id="input-answer" onChange={changeAnswer} />
+        <input id="input-answer" onChange={changeAnswer} value={answer} />
         <button type="submit">Sjekk</button>
         {feedback && <p>{feedback}</p>}
       </form>
