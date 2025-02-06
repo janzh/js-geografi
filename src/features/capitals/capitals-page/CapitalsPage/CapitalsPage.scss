@@ -1,5 +1,6 @@
 .capitalsPage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
+  @media screen and (min-width: 36rem) {
+    width: 36rem;
+  }
 }
