@@ -25,3 +25,19 @@
 
 ### Test docker file
 `docker run -p 8080:8080 $(docker build -q .)`
+
+
+### Build to Capacitor
+First time on project:
+`npx cap init`
+
+Build for Android:
+`npm run build`
+`npm install @capacitor/android`
+`npx cap add android`
+
+### Sync your Vite build with the native projects
+`npx cap sync`
+
+### Opening and Running Your App
+`npx cap open android`

@@ -22,7 +22,7 @@ const CapitalsGuesser = () => {
 
   const checkAnswer = () => {
     if (
-      countriesUnanswered[currentCountryIndex].city.toLowerCase() ===
+      countriesUnanswered[currentCountryIndex]?.city?.toLowerCase() ===
       answer.toLowerCase()
     ) {
       setFeedback("Riktig svar!");
