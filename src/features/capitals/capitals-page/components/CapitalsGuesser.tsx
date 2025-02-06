@@ -6,6 +6,7 @@ import { ChangeEvent, useState } from "react";
 const getRandomInt = (max: number) => Math.floor(Math.random() * max);
 
 const CapitalsGuesser = () => {
+  const [correctCount, setCorrectCount] = useState(0);
   const [countriesUnanswered, setCountriesUnanswered] =
     useState(countryCapitals);
   const [currentCountryIndex, setCurrentCountryIndex] = useState(
@@ -26,6 +27,7 @@ const CapitalsGuesser = () => {
       answer.toLowerCase()
     ) {
       setFeedback("Riktig svar!");
+      setCorrectCount(correctCount + 1);
     } else {
       setFeedback("Feil svar!");
     }
@@ -40,10 +42,13 @@ const CapitalsGuesser = () => {
   };
 
   const reset = () => {
+    setCorrectCount(0);
     setCountriesUnanswered(countryCapitals);
     getRandomInt(countryCapitals.length);
     setFeedback("");
   };
+
+  const amountCorrectText = `Andel riktige: ${correctCount}/${countryCapitals.length}`;
 
   return (
     <div className="capitalsGuesser">
@@ -63,6 +68,10 @@ const CapitalsGuesser = () => {
       <section className="block">
         <button onClick={nextAnswer}>Neste</button>
         <button onClick={reset}>Start på nytt</button>
+      </section>
+
+      <section className="block">
+        <p>{amountCorrectText}</p>
       </section>
     </div>
   );
