@@ -12,7 +12,13 @@ module.exports = {
     "plugin:testing-library/react",
     "prettier",
   ],
-  ignorePatterns: ["dist", ".eslintrc.cjs", "purejs"],
+  ignorePatterns: [
+    "dist",
+    ".eslintrc.cjs",
+    "purejs",
+    "android",
+    "capacitor.config.ts",
+  ],
   parser: "@typescript-eslint/parser",
   plugins: ["import", "react-refresh", "simple-import-sort", "testing-library"],
   rules: {

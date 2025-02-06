@@ -17,10 +17,6 @@ const countryCapitals: CountryCapital[] = [
     city: "Alger",
   },
   {
-    country: "American Samoa",
-    city: "Fagatogo",
-  },
-  {
     country: "Andorra",
     city: "Andorra la Vella",
   },
@@ -29,15 +25,7 @@ const countryCapitals: CountryCapital[] = [
     city: "Luanda",
   },
   {
-    country: "Anguilla",
-    city: "The Valley",
-  },
-  {
-    country: "Antarctica",
-    city: undefined,
-  },
-  {
-    country: "Antigua and Barbuda",
+    country: "Antigua og Barbuda",
     city: "Saint John's",
   },
   {
@@ -46,22 +34,14 @@ const countryCapitals: CountryCapital[] = [
   },
   {
     country: "Armenia",
-    city: "Yerevan",
-  },
-  {
-    country: "Aruba",
-    city: "Oranjestad",
+    city: "Jerevan",
   },
   {
     country: "Australia",
     city: "Canberra",
   },
   {
-    country: "Austria",
-    city: "Wien",
-  },
-  {
-    country: "Azerbaijan",
+    country: "Aserbajdsjan",
     city: "Baku",
   },
   {
@@ -70,7 +50,7 @@ const countryCapitals: CountryCapital[] = [
   },
   {
     country: "Bahrain",
-    city: "al-Manama",
+    city: "Manama",
   },
   {
     country: "Bangladesh",
@@ -86,7 +66,7 @@ const countryCapitals: CountryCapital[] = [
   },
   {
     country: "Belgium",
-    city: "Bruxelles [Brussel]",
+    city: "Brussel",
   },
   {
     country: "Belize",
@@ -97,19 +77,15 @@ const countryCapitals: CountryCapital[] = [
     city: "Porto-Novo",
   },
   {
-    country: "Bermuda",
-    city: "Hamilton",
-  },
-  {
     country: "Bhutan",
     city: "Thimphu",
   },
   {
     country: "Bolivia",
-    city: "La Paz",
+    city: "Sucre",
   },
   {
-    country: "Bosnia and Herzegovina",
+    country: "Bosnia-Hercegovina",
     city: "Sarajevo",
   },
   {
@@ -117,16 +93,8 @@ const countryCapitals: CountryCapital[] = [
     city: "Gaborone",
   },
   {
-    country: "Bouvet Island",
-    city: undefined,
-  },
-  {
-    country: "Brazil",
+    country: "Brasil",
     city: "Brasília",
-  },
-  {
-    country: "British Indian Ocean Territory",
-    city: undefined,
   },
   {
     country: "Brunei",
@@ -142,91 +110,31 @@ const countryCapitals: CountryCapital[] = [
   },
   {
     country: "Burundi",
-    city: "Bujumbura",
-  },
-  {
-    country: "Cambodia",
-    city: "Phnom Penh",
-  },
-  {
-    country: "Cameroon",
-    city: "Yaounde",
+    city: "Gitega",
   },
   {
     country: "Canada",
     city: "Ottawa",
   },
   {
-    country: "Cape Verde",
-    city: "Praia",
-  },
-  {
-    country: "Cayman Islands",
-    city: "George Town",
-  },
-  {
-    country: "Central African Republic",
-    city: "Bangui",
-  },
-  {
-    country: "Chad",
-    city: "N'Djamena",
-  },
-  {
     country: "Chile",
     city: "Santiago de Chile",
-  },
-  {
-    country: "China",
-    city: "Peking",
-  },
-  {
-    country: "Christmas Island",
-    city: "Flying Fish Cove",
-  },
-  {
-    country: "Cocos (Keeling) Islands",
-    city: "West Island",
   },
   {
     country: "Colombia",
     city: "Bogota",
   },
   {
-    country: "Comoros",
-    city: "Moroni",
-  },
-  {
-    country: "Congo",
-    city: "Brazzaville",
-  },
-  {
-    country: "Cook Islands",
-    city: "Avarua",
-  },
-  {
     country: "Costa Rica",
-    city: "San José",
-  },
-  {
-    country: "Croatia",
-    city: "Zagreb",
+    city: "San Jose",
   },
   {
     country: "Cuba",
-    city: "La Habana",
-  },
-  {
-    country: "Cyprus",
-    city: "Nicosia",
-  },
-  {
-    country: "Czech Republic",
-    city: "Praha",
+    city: "Havanna",
   },
   {
     country: "Denmark",
-    city: "Copenhagen",
+    city: "København",
   },
   {
     country: "Djibouti",
@@ -237,12 +145,8 @@ const countryCapitals: CountryCapital[] = [
     city: "Roseau",
   },
   {
-    country: "Dominican Republic",
-    city: "Santo Domingo de Guzm",
-  },
-  {
-    country: "East Timor",
-    city: "Dili",
+    country: "Den dominikanske republikk",
+    city: "Santo Domingo",
   },
   {
     country: "Ecuador",
@@ -250,18 +154,18 @@ const countryCapitals: CountryCapital[] = [
   },
   {
     country: "Egypt",
-    city: "Cairo",
+    city: "Kairo",
   },
   {
     country: "El Salvador",
     city: "San Salvador",
   },
   {
-    country: "England",
-    city: "London",
+    country: "Elfenbenskysten",
+    city: "Yamoussoukro",
   },
   {
-    country: "Equatorial Guinea",
+    country: "Ekvatorial-Guinea",
     city: "Malabo",
   },
   {
@@ -269,7 +173,7 @@ const countryCapitals: CountryCapital[] = [
     city: "Asmara",
   },
   {
-    country: "Estonia",
+    country: "Estland",
     city: "Tallinn",
   },
   {
@@ -277,40 +181,36 @@ const countryCapitals: CountryCapital[] = [
     city: "Mbabane",
   },
   {
-    country: "Ethiopia",
+    country: "Etiopia",
     city: "Addis Abeba",
   },
   {
-    country: "Falkland Islands",
-    city: "Stanley",
+    country: "Færøyene",
+    city: "Torshavn",
   },
   {
-    country: "Faroe Islands",
-    city: "Tórshavn",
-  },
-  {
-    country: "Fiji Islands",
+    country: "Fiji",
     city: "Suva",
   },
   {
-    country: "Finland",
-    city: "Helsinki [Helsingfors]",
+    country: "Filippinene",
+    city: "Manila",
   },
   {
-    country: "France",
+    country: "Finland",
+    city: "Helsinki",
+  },
+  {
+    country: "De forente arabiske emirater",
+    city: "Abu Dhabi",
+  },
+  {
+    country: "Frankrike",
     city: "Paris",
   },
   {
-    country: "French Guiana",
+    country: "Fransk Guiana",
     city: "Cayenne",
-  },
-  {
-    country: "French Polynesia",
-    city: "Papeete",
-  },
-  {
-    country: "French Southern territories",
-    city: undefined,
   },
   {
     country: "Gabon",
@@ -325,40 +225,16 @@ const countryCapitals: CountryCapital[] = [
     city: "Tbilisi",
   },
   {
-    country: "Germany",
-    city: "Berlin",
-  },
-  {
     country: "Ghana",
     city: "Accra",
-  },
-  {
-    country: "Gibraltar",
-    city: "Gibraltar",
-  },
-  {
-    country: "Greece",
-    city: "Athenai",
-  },
-  {
-    country: "Greenland",
-    city: "Nuuk",
   },
   {
     country: "Grenada",
     city: "Saint George's",
   },
   {
-    country: "Guadeloupe",
-    city: "Basse-Terre",
-  },
-  {
-    country: "Guam",
-    city: "Aga",
-  },
-  {
     country: "Guatemala",
-    city: "Ciudad de Guatemala",
+    city: "Guatemala",
   },
   {
     country: "Guinea",
@@ -377,28 +253,12 @@ const countryCapitals: CountryCapital[] = [
     city: "Port-au-Prince",
   },
   {
-    country: "Heard Island and McDonald Islands",
-    city: undefined,
-  },
-  {
-    country: "Holy See (Vatican City State)",
-    city: "Citt",
+    country: "Hellas",
+    city: "Athen",
   },
   {
     country: "Honduras",
     city: "Tegucigalpa",
-  },
-  {
-    country: "Hong Kong",
-    city: "Victoria",
-  },
-  {
-    country: "Hungary",
-    city: "Budapest",
-  },
-  {
-    country: "Iceland",
-    city: "Reykjavík",
   },
   {
     country: "India",
@@ -410,27 +270,27 @@ const countryCapitals: CountryCapital[] = [
   },
   {
     country: "Iran",
-    city: "Tehran",
+    city: "Teheran",
   },
   {
-    country: "Iraq",
-    city: "Baghdad",
+    country: "Irak",
+    city: "Bagdad",
   },
   {
-    country: "Ireland",
+    country: "Irland",
     city: "Dublin",
+  },
+  {
+    country: "Island",
+    city: "Reykjavík",
   },
   {
     country: "Israel",
     city: "Jerusalem",
   },
   {
-    country: "Italy",
+    country: "Italia",
     city: "Roma",
-  },
-  {
-    country: "Ivory Coast",
-    city: "Yamoussoukro",
   },
   {
     country: "Jamaica",
@@ -441,8 +301,24 @@ const countryCapitals: CountryCapital[] = [
     city: "Tokyo",
   },
   {
+    country: "Jemen",
+    city: "Sanaa",
+  },
+  {
     country: "Jordan",
     city: "Amman",
+  },
+  {
+    country: "Kapp Verde",
+    city: "Praia",
+  },
+  {
+    country: "Kambodsja",
+    city: "Phnom Penh",
+  },
+  {
+    country: "Kamerun",
+    city: "Yaounde",
   },
   {
     country: "Kazakhstan",
@@ -453,15 +329,43 @@ const countryCapitals: CountryCapital[] = [
     city: "Nairobi",
   },
   {
+    country: "Kina",
+    city: "Beijing",
+  },
+  {
     country: "Kiribati",
     city: "Bairiki",
+  },
+  {
+    country: "Komorene",
+    city: "Moroni",
+  },
+  {
+    country: "Den demokratiske republikken Kongo",
+    city: "Kinshasa",
+  },
+  {
+    country: "Republikken Kongo",
+    city: "Brazzaville",
+  },
+  {
+    country: "Kosovo",
+    city: "Prishtina",
+  },
+  {
+    country: "Kroatia",
+    city: "Zagreb",
   },
   {
     country: "Kuwait",
     city: "Kuwait",
   },
   {
-    country: "Kyrgyzstan",
+    country: "Kypros",
+    city: "Nikosia",
+  },
+  {
+    country: "Kirgisistan",
     city: "Bishkek",
   },
   {
@@ -473,12 +377,12 @@ const countryCapitals: CountryCapital[] = [
     city: "Riga",
   },
   {
-    country: "Lebanon",
-    city: "Beirut",
-  },
-  {
     country: "Lesotho",
     city: "Maseru",
+  },
+  {
+    country: "Libanon",
+    city: "Beirut",
   },
   {
     country: "Liberia",
@@ -493,20 +397,12 @@ const countryCapitals: CountryCapital[] = [
     city: "Vaduz",
   },
   {
-    country: "Lithuania",
+    country: "Litauen",
     city: "Vilnius",
   },
   {
     country: "Luxembourg",
-    city: "Luxembourg [Luxemburg/L",
-  },
-  {
-    country: "Macao",
-    city: "Macao",
-  },
-  {
-    country: "North Macedonia",
-    city: "Skopje",
+    city: "Luxembourg",
   },
   {
     country: "Madagascar",
@@ -521,7 +417,7 @@ const countryCapitals: CountryCapital[] = [
     city: "Kuala Lumpur",
   },
   {
-    country: "Maldives",
+    country: "Maldivene",
     city: "Male",
   },
   {
@@ -533,12 +429,12 @@ const countryCapitals: CountryCapital[] = [
     city: "Valletta",
   },
   {
-    country: "Marshall Islands",
-    city: "Dalap-Uliga-Darrit",
+    country: "Marokko",
+    city: "Rabat",
   },
   {
-    country: "Martinique",
-    city: "Fort-de-France",
+    country: "Marshalløyene",
+    city: "Majuro",
   },
   {
     country: "Mauritania",
@@ -546,18 +442,14 @@ const countryCapitals: CountryCapital[] = [
   },
   {
     country: "Mauritius",
-    city: "Port-Louis",
-  },
-  {
-    country: "Mayotte",
-    city: "Mamoutzou",
+    city: "Port Louis",
   },
   {
     country: "Mexico",
-    city: "Ciudad de M",
+    city: "Mexico by",
   },
   {
-    country: "Micronesia, Federated States of",
+    country: "Mikronesia",
     city: "Palikir",
   },
   {
@@ -566,7 +458,7 @@ const countryCapitals: CountryCapital[] = [
   },
   {
     country: "Monaco",
-    city: "Monaco-Ville",
+    city: "Monaco",
   },
   {
     country: "Mongolia",
@@ -581,16 +473,12 @@ const countryCapitals: CountryCapital[] = [
     city: "Plymouth",
   },
   {
-    country: "Morocco",
-    city: "Rabat",
-  },
-  {
-    country: "Mozambique",
+    country: "Mosambik",
     city: "Maputo",
   },
   {
     country: "Myanmar",
-    city: "Rangoon (Yangon)",
+    city: "Nay Pyi Taw",
   },
   {
     country: "Namibia",
@@ -601,20 +489,12 @@ const countryCapitals: CountryCapital[] = [
     city: "Yaren",
   },
   {
-    country: "Nepal",
-    city: "Kathmandu",
-  },
-  {
-    country: "Netherlands",
+    country: "Nedeland",
     city: "Amsterdam",
   },
   {
-    country: "Netherlands Antilles",
-    city: "Willemstad",
-  },
-  {
-    country: "New Caledonia",
-    city: "Noum",
+    country: "Nepal",
+    city: "Kathmandu",
   },
   {
     country: "New Zealand",
@@ -633,32 +513,24 @@ const countryCapitals: CountryCapital[] = [
     city: "Abuja",
   },
   {
-    country: "Niue",
-    city: "Alofi",
-  },
-  {
-    country: "Norfolk Island",
-    city: "Kingston",
-  },
-  {
-    country: "North Korea",
+    country: "Nord-Korea",
     city: "Pyongyang",
   },
   {
-    country: "Northern Ireland",
-    city: "Belfast",
+    country: "Nord-Makedonia",
+    city: "Skopje",
   },
   {
-    country: "Northern Mariana Islands",
-    city: "Garapan",
-  },
-  {
-    country: "Norway",
+    country: "Norge",
     city: "Oslo",
   },
   {
+    country: "Ny-Caledonia",
+    city: "Noum",
+  },
+  {
     country: "Oman",
-    city: "Masqat",
+    city: "Muskat",
   },
   {
     country: "Pakistan",
@@ -666,15 +538,11 @@ const countryCapitals: CountryCapital[] = [
   },
   {
     country: "Palau",
-    city: "Koror",
-  },
-  {
-    country: "Palestine",
-    city: "Gaza",
+    city: "Ngerulmud",
   },
   {
     country: "Panama",
-    city: "Ciudad de Panamá",
+    city: "Panama by",
   },
   {
     country: "Papua New Guinea",
@@ -689,15 +557,7 @@ const countryCapitals: CountryCapital[] = [
     city: "Lima",
   },
   {
-    country: "Philippines",
-    city: "Manila",
-  },
-  {
-    country: "Pitcairn",
-    city: "Adamstown",
-  },
-  {
-    country: "Poland",
+    country: "Polen",
     city: "Warszawa",
   },
   {
@@ -705,35 +565,23 @@ const countryCapitals: CountryCapital[] = [
     city: "Lisboa",
   },
   {
-    country: "Puerto Rico",
-    city: "San Juan",
-  },
-  {
     country: "Qatar",
     city: "Doha",
-  },
-  {
-    country: "Reunion",
-    city: "Saint-Denis",
   },
   {
     country: "Romania",
     city: "Bucuresti",
   },
   {
-    country: "Russia",
-    city: "Moscow",
+    country: "Russland",
+    city: "Moskva",
   },
   {
     country: "Rwanda",
     city: "Kigali",
   },
   {
-    country: "Saint Helena",
-    city: "Jamestown",
-  },
-  {
-    country: "Saint Kitts and Nevis",
+    country: "Saint Kitts og Nevis",
     city: "Basseterre",
   },
   {
@@ -741,12 +589,12 @@ const countryCapitals: CountryCapital[] = [
     city: "Castries",
   },
   {
-    country: "Saint Pierre and Miquelon",
-    city: "Saint-Pierre",
+    country: "Saint Vincent og Grenadinene",
+    city: "Kingstown",
   },
   {
-    country: "Saint Vincent and the Grenadines",
-    city: "Kingstown",
+    country: "Salomonøyene",
+    city: "Honiara",
   },
   {
     country: "Samoa",
@@ -757,27 +605,27 @@ const countryCapitals: CountryCapital[] = [
     city: "San Marino",
   },
   {
-    country: "Sao Tome and Principe",
-    city: "São Tomé",
+    country: "Sao Tome og Principe",
+    city: "Sao Tome",
   },
   {
     country: "Saudi Arabia",
     city: "Riyadh",
   },
   {
-    country: "Scotland",
-    city: "Edinburgh",
-  },
-  {
     country: "Senegal",
     city: "Dakar",
   },
   {
-    country: "Serbia",
-    city: "Belgrade",
+    country: "Den sentralafrikanske republikk",
+    city: "Bangui",
   },
   {
-    country: "Seychelles",
+    country: "Serbia",
+    city: "Beograd",
+  },
+  {
+    country: "Seychellene",
     city: "Victoria",
   },
   {
@@ -797,184 +645,148 @@ const countryCapitals: CountryCapital[] = [
     city: "Ljubljana",
   },
   {
-    country: "Solomon Islands",
-    city: "Honiara",
-  },
-  {
     country: "Somalia",
     city: "Mogadishu",
   },
   {
-    country: "South Africa",
-    city: "Pretoria",
-  },
-  {
-    country: "South Georgia and the South Sandwich Islands",
-    city: undefined,
-  },
-  {
-    country: "South Korea",
-    city: "Seoul",
-  },
-  {
-    country: "South Sudan",
-    city: "Juba",
-  },
-  {
-    country: "Spain",
+    country: "Spania",
     city: "Madrid",
   },
   {
     country: "Sri Lanka",
-    city: "Colombo, Sri Jayawardenepura Kotte",
+    city: "Colombo",
+  },
+  {
+    country: "Storbritannia",
+    city: "London",
   },
   {
     country: "Sudan",
-    city: "Khartum",
+    city: "Khartoum",
   },
   {
-    country: "Suriname",
+    country: "Surinam",
     city: "Paramaribo",
   },
   {
-    country: "Svalbard and Jan Mayen",
-    city: "Longyearbyen",
-  },
-  {
-    country: "Sweden",
-    city: "Stockholm",
-  },
-  {
-    country: "Switzerland",
+    country: "Sveits",
     city: "Bern",
   },
   {
-    country: "Syria",
-    city: "Damascus",
+    country: "Sverige",
+    city: "Stockholm",
   },
   {
-    country: "Tajikistan",
-    city: "Dushanbe",
+    country: "Syria",
+    city: "Damaskus",
+  },
+  {
+    country: "Sør-afrika",
+    city: "Pretoria",
+  },
+  {
+    country: "Sør-korea",
+    city: "Seoul",
+  },
+  {
+    country: "Sør-sudan",
+    city: "Juba",
+  },
+  {
+    country: "Tadsjikistan",
+    city: "Dusjanbe",
   },
   {
     country: "Tanzania",
     city: "Dodoma",
   },
   {
+    country: "Taiwan",
+    city: "Taipei",
+  },
+  {
     country: "Thailand",
     city: "Bangkok",
   },
   {
-    country: "The Democratic Republic of Congo",
-    city: "Kinshasa",
-  },
-  {
     country: "Togo",
-    city: "Lomé",
-  },
-  {
-    country: "Tokelau",
-    city: "Fakaofo",
+    city: "Lome",
   },
   {
     country: "Tonga",
     city: "Nuku'alofa",
   },
   {
-    country: "Trinidad and Tobago",
-    city: "Port-of-Spain",
+    country: "Trinidad og Tobago",
+    city: "Port of spain",
+  },
+  {
+    country: "Tsjad",
+    city: "N'Djamena",
+  },
+  {
+    country: "Tsjekkia",
+    city: "Praha",
   },
   {
     country: "Tunisia",
     city: "Tunis",
   },
   {
-    country: "Turkey",
-    city: "Ankara",
-  },
-  {
     country: "Turkmenistan",
-    city: "Ashgabat",
-  },
-  {
-    country: "Turks and Caicos Islands",
-    city: "Cockburn Town",
+    city: "Asgabat",
   },
   {
     country: "Tuvalu",
     city: "Funafuti",
   },
   {
+    country: "Tyrkia",
+    city: "Ankara",
+  },
+  {
+    country: "Tyskland",
+    city: "Berlin",
+  },
+  {
     country: "Uganda",
     city: "Kampala",
   },
   {
-    country: "Ukraine",
+    country: "Ukraina",
     city: "Kyiv",
   },
   {
-    country: "United Arab Emirates",
-    city: "Abu Dhabi",
-  },
-  {
-    country: "United Kingdom",
-    city: "London",
-  },
-  {
-    country: "United States",
-    city: "Washington",
-  },
-  {
-    country: "United States Minor Outlying Islands",
-    city: undefined,
+    country: "Ungarn",
+    city: "Budapest",
   },
   {
     country: "Uruguay",
     city: "Montevideo",
   },
   {
-    country: "Uzbekistan",
-    city: "Toskent",
+    country: "USA",
+    city: "Washington",
+  },
+  {
+    country: "Usbekistan",
+    city: "Tasjkent",
   },
   {
     country: "Vanuatu",
-    city: "Port-Vila",
+    city: "Port vila",
+  },
+  {
+    country: "Vatikanstaten",
+    city: "Vatikanstaten",
   },
   {
     country: "Venezuela",
     city: "Caracas",
   },
   {
-    country: "Vetican City",
-    city: "Vetican City",
-  },
-  {
     country: "Vietnam",
     city: "Hanoi",
-  },
-  {
-    country: "Virgin Islands, British",
-    city: "Road Town",
-  },
-  {
-    country: "Virgin Islands, U.S.",
-    city: "Charlotte Amalie",
-  },
-  {
-    country: "Wales",
-    city: "Cardiff",
-  },
-  {
-    country: "Wallis and Futuna",
-    city: "Mata-Utu",
-  },
-  {
-    country: "Western Sahara",
-    city: "El-Aai",
-  },
-  {
-    country: "Yemen",
-    city: "Sanaa",
   },
   {
     country: "Zambia",
@@ -983,6 +795,14 @@ const countryCapitals: CountryCapital[] = [
   {
     country: "Zimbabwe",
     city: "Harare",
+  },
+  {
+    country: "Øst-timor",
+    city: "Dili",
+  },
+  {
+    country: "Østerrike",
+    city: "Wien",
   },
 ];
 

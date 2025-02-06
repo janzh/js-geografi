@@ -6,3 +6,5 @@ package-lock.json
 README.md
 
 purejs/
+android/
+capacitor.config.ts
