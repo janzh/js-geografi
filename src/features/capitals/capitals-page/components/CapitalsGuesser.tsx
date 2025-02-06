@@ -34,8 +34,13 @@ const CapitalsGuesser = () => {
   };
 
   const nextAnswer = () => {
-    if (countriesUnanswered.length) {
-      setCurrentCountryIndex(getRandomInt(countriesUnanswered.length));
+    const newCountriesUnanswered = [...countriesUnanswered].filter(
+      (_, index) => index !== currentCountryIndex,
+    );
+
+    if (newCountriesUnanswered.length) {
+      setCurrentCountryIndex(getRandomInt(newCountriesUnanswered.length));
+      setCountriesUnanswered(newCountriesUnanswered);
     } else {
       setFeedback("Du har svart på alle verdens land");
     }
@@ -48,6 +53,7 @@ const CapitalsGuesser = () => {
     setFeedback("");
   };
 
+  const amountGuessedText = `Andel svart: ${countryCapitals.length - countriesUnanswered.length}/${countryCapitals.length}`;
   const amountCorrectText = `Andel riktige: ${correctCount}/${countryCapitals.length}`;
 
   return (
@@ -71,6 +77,7 @@ const CapitalsGuesser = () => {
       </section>
 
       <section className="block">
+        <p>{amountGuessedText}</p>
         <p>{amountCorrectText}</p>
       </section>
     </div>
