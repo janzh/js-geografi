@@ -41,3 +41,4 @@ Build for Android:
 
 ### Opening and Running Your App
 `npx cap open android`
+Alternatively, you can open Android Studio and import the android/ directory as an Android Studio project.
