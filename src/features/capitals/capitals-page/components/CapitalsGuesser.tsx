@@ -6,6 +6,9 @@ import { ChangeEvent, useState } from "react";
 const getRandomInt = (max: number) => Math.floor(Math.random() * max);
 
 const CapitalsGuesser = () => {
+  const [isAnsweredCorrectly, setIsAnsweredCorrectly] = useState<
+    boolean | undefined
+  >(undefined);
   const [isAnswered, setIsAnswered] = useState(false);
   const [correctCount, setCorrectCount] = useState(0);
   const [countriesUnanswered, setCountriesUnanswered] =
@@ -40,16 +43,18 @@ const CapitalsGuesser = () => {
 
   const checkAnswer = () => {
     if (!isAnswered) {
-      if (
+      const answerIsCorrect =
         countriesUnanswered[currentCountryIndex]?.city?.toLowerCase() ===
-        answer.toLowerCase()
-      ) {
+        answer.toLowerCase();
+
+      if (answerIsCorrect) {
         setFeedback("Riktig svar!");
         setCorrectCount(correctCount + 1);
       } else {
         setFeedback("Feil svar!");
       }
 
+      setIsAnsweredCorrectly(answerIsCorrect);
       setIsAnswered(true);
     } else {
       nextAnswer();
@@ -61,6 +66,8 @@ const CapitalsGuesser = () => {
     setCountriesUnanswered(countryCapitals);
     getRandomInt(countryCapitals.length);
     setFeedback("");
+    setIsAnsweredCorrectly(undefined);
+    setIsAnswered(undefined);
   };
 
   const amountGuessedText = `Andel svart: ${countryCapitals.length - countriesUnanswered.length}/${countryCapitals.length}`;
@@ -72,6 +79,18 @@ const CapitalsGuesser = () => {
     }
 
     return "Sjekk";
+  };
+
+  const getSubmitButtonColor = () => {
+    if (!answer) {
+      return "disabled";
+    }
+
+    if (isAnswered && !isAnsweredCorrectly) {
+      return "error";
+    }
+
+    return "success";
   };
 
   return (
@@ -86,7 +105,9 @@ const CapitalsGuesser = () => {
         <p>Land: {countriesUnanswered[currentCountryIndex].country}</p>
         <label htmlFor="input-answer">Hovedstad:</label>
         <input id="input-answer" onChange={changeAnswer} value={answer} />
-        <button type="submit">{submitButtonText()}</button>
+        <button className={`${getSubmitButtonColor()}`} type="submit">
+          {submitButtonText()}
+        </button>
         {feedback && <p>{feedback}</p>}
       </form>
       <section className="block">

@@ -33,4 +33,16 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 1.5rem;
+
+  &.success {
+    background-color: green;
+  }
+
+  &.error {
+    background-color: red;
+  }
+
+  &.disabled {
+    background-color: grey;
+  }
 }
