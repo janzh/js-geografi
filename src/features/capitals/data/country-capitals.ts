@@ -550,7 +550,7 @@ const countryCapitals: CountryCapital[] = [
   },
   {
     country: "Paraguay",
-    city: "Asunción",
+    city: "Asuncion",
   },
   {
     country: "Peru",
