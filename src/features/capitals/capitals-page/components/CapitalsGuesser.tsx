@@ -75,13 +75,10 @@ const CapitalsGuesser = () => {
     setAnswerMode(AnswerMode.UNSUBMITTED);
   };
 
-  const amountGuessed =
-    (countryCapitals.length - countriesUnanswered.length) /
-    countryCapitals.length;
-  const amountCorrect = Math.ceil(
-    (correctCount / countryCapitals.length) * 100,
-  );
-  const amountCorrectText = `${amountCorrect}% riktige svar`;
+  const guessedAmount = countryCapitals.length - countriesUnanswered.length;
+  const guessProportion = guessedAmount / countryCapitals.length;
+  const correctPercentage = Math.ceil((correctCount / guessedAmount) * 100);
+  const amountCorrectText = `${correctPercentage}% riktige svar`;
 
   const getFeedbackText = () => {
     if (isFinished) {
@@ -132,7 +129,7 @@ const CapitalsGuesser = () => {
           checkAnswer();
         }}
       >
-        <ProgressBar progress={amountGuessed} />
+        <ProgressBar progress={guessProportion} />
         <p>{countriesUnanswered[currentCountryIndex]?.country}</p>
         <label htmlFor="input-answer">Hovedstad:</label>
         <input id="input-answer" onChange={changeAnswer} value={answer} />
