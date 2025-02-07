@@ -81,7 +81,7 @@ const CapitalsGuesser = () => {
     return "Sjekk";
   };
 
-  const getSubmitButtonColor = () => {
+  const getAnswerSubmitColor = () => {
     if (!answer) {
       return "disabled";
     }
@@ -105,10 +105,17 @@ const CapitalsGuesser = () => {
         <p>Land: {countriesUnanswered[currentCountryIndex].country}</p>
         <label htmlFor="input-answer">Hovedstad:</label>
         <input id="input-answer" onChange={changeAnswer} value={answer} />
-        <button className={`${getSubmitButtonColor()}`} type="submit">
-          {submitButtonText()}
-        </button>
-        {feedback && <p>{feedback}</p>}
+        <div className={`answer-submit ${getAnswerSubmitColor()}`}>
+          {feedback && (
+            <div className="answer-submit__feedback">
+              <p>{feedback}</p>
+              {!isAnsweredCorrectly && (
+                <small>{`Riktig svar er: ${countriesUnanswered[currentCountryIndex]?.city}`}</small>
+              )}
+            </div>
+          )}
+          <button type="submit">{submitButtonText()}</button>
+        </div>
       </form>
       <section className="block">
         <p>{amountGuessedText}</p>
