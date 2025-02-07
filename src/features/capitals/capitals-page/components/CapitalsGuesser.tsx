@@ -7,17 +7,21 @@ import { ChangeEvent, useState } from "react";
 const getRandomInt = (max: number) => Math.floor(Math.random() * max);
 
 enum AnswerMode {
-  UNANSWERED,
+  UNSUBMITTED,
   SUBMITTED_CORRECT,
   SUBMITTED_WRONG,
 }
 
 const CapitalsGuesser = () => {
-  const [answerMode, setAnswerMode] = useState(AnswerMode.UNANSWERED);
+  const [answer, setAnswer] = useState("");
+
+  const isAnswered = !!answer;
+
+  const [answerMode, setAnswerMode] = useState(AnswerMode.UNSUBMITTED);
 
   const isAnsweredWrongly = AnswerMode.SUBMITTED_WRONG === answerMode;
-  const isAnsweredCorrect = AnswerMode.SUBMITTED_CORRECT === answerMode;
-  const answered = isAnsweredWrongly || isAnsweredCorrect;
+  const isAnsweredCorrectly = AnswerMode.SUBMITTED_CORRECT === answerMode;
+  const isAnswerSubmitted = isAnsweredWrongly || isAnsweredCorrectly;
 
   const [correctCount, setCorrectCount] = useState(0);
   const [countriesUnanswered, setCountriesUnanswered] =
@@ -26,7 +30,7 @@ const CapitalsGuesser = () => {
     getRandomInt(countriesUnanswered.length),
   );
 
-  const [answer, setAnswer] = useState("");
+  const isFinished = !countriesUnanswered.length;
 
   const changeAnswer = (event: ChangeEvent<HTMLInputElement>) => {
     setAnswer(event.target.value);
@@ -39,16 +43,15 @@ const CapitalsGuesser = () => {
 
     if (newCountriesUnanswered.length) {
       setCurrentCountryIndex(getRandomInt(newCountriesUnanswered.length));
-      setCountriesUnanswered(newCountriesUnanswered);
     }
 
+    setCountriesUnanswered(newCountriesUnanswered);
     setAnswer("");
-
-    setAnswerMode(AnswerMode.UNANSWERED);
+    setAnswerMode(AnswerMode.UNSUBMITTED);
   };
 
   const checkAnswer = () => {
-    if (answered) {
+    if (isAnswerSubmitted) {
       nextAnswer();
     } else {
       const answerIsCorrect =
@@ -69,33 +72,35 @@ const CapitalsGuesser = () => {
     setCorrectCount(0);
     setCountriesUnanswered(countryCapitals);
     getRandomInt(countryCapitals.length);
-
-    setAnswerMode(AnswerMode.UNANSWERED);
+    setAnswerMode(AnswerMode.UNSUBMITTED);
   };
 
   const amountGuessed =
     (countryCapitals.length - countriesUnanswered.length) /
     countryCapitals.length;
-  const amountCorrectText = `Andel riktige: ${correctCount}/${countryCapitals.length}`;
+  const amountCorrect = Math.ceil(
+    (correctCount / countryCapitals.length) * 100,
+  );
+  const amountCorrectText = `${amountCorrect}% riktige svar`;
 
   const getFeedbackText = () => {
+    if (isFinished) {
+      return "Du har svart på alle land";
+    }
+
     if (isAnsweredWrongly) {
       return "Feil";
     }
 
-    if (isAnsweredCorrect) {
+    if (isAnsweredCorrectly) {
       return "Riktig";
-    }
-
-    if (!countriesUnanswered.length) {
-      return "Du har svart på alle verdens land";
     }
 
     return "";
   };
 
   const getSubmitButtonText = () => {
-    if (answered) {
+    if (isAnswerSubmitted) {
       return "Fortsett";
     }
 
@@ -103,11 +108,15 @@ const CapitalsGuesser = () => {
   };
 
   const getAnswerSubmitColor = () => {
+    if (isFinished || !isAnswered) {
+      return "disabled";
+    }
+
     if (isAnsweredWrongly) {
       return "error";
     }
 
-    if (isAnsweredCorrect || !!answer) {
+    if (isAnsweredCorrectly || isAnswered) {
       return "success";
     }
 
@@ -124,11 +133,11 @@ const CapitalsGuesser = () => {
         }}
       >
         <ProgressBar progress={amountGuessed} />
-        <p>{countriesUnanswered[currentCountryIndex].country}</p>
+        <p>{countriesUnanswered[currentCountryIndex]?.country}</p>
         <label htmlFor="input-answer">Hovedstad:</label>
         <input id="input-answer" onChange={changeAnswer} value={answer} />
         <div className={`answer-submit ${getAnswerSubmitColor()}`}>
-          {answered && (
+          {(isAnswerSubmitted || isFinished) && (
             <div className="answer-submit__feedback">
               <p>{getFeedbackText()}</p>
               {isAnsweredWrongly && (
@@ -136,7 +145,9 @@ const CapitalsGuesser = () => {
               )}
             </div>
           )}
-          <button type="submit">{getSubmitButtonText()}</button>
+          <button disabled={!isAnswered || isFinished} type="submit">
+            {getSubmitButtonText()}
+          </button>
         </div>
       </form>
       <section className="block">
