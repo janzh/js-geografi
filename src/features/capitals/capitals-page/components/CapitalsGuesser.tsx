@@ -52,7 +52,7 @@ const CapitalsGuesser = () => {
     } else {
       const answerIsCorrect =
         countriesUnanswered[currentCountryIndex]?.city?.toLowerCase() ===
-        answer.toLowerCase();
+        answer.toLowerCase().trim();
 
       if (answerIsCorrect) {
         setCorrectCount(correctCount + 1);
