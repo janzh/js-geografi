@@ -4,7 +4,7 @@ import CapitalsGuesser from "@src/features/capitals/capitals-page/components/Cap
 
 const CapitalsPage = () => (
   <div className="capitalsPage">
-    <h1>Hovedsteder</h1>
+    <h1>Gjett landets hovedstad</h1>
 
     <CapitalsGuesser />
   </div>

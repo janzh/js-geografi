@@ -5,6 +5,11 @@
     font-size: 1.5rem;
   }
 
+  label {
+    display: none;
+    visibility: hidden;
+  }
+
   input {
     border-radius: 1rem;
   }

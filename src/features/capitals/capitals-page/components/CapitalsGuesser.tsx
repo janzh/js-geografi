@@ -120,7 +120,7 @@ const CapitalsGuesser = () => {
           checkAnswer();
         }}
       >
-        <p>Land: {countriesUnanswered[currentCountryIndex].country}</p>
+        <p>{countriesUnanswered[currentCountryIndex].country}</p>
         <label htmlFor="input-answer">Hovedstad:</label>
         <input id="input-answer" onChange={changeAnswer} value={answer} />
         <div className={`answer-submit ${getAnswerSubmitColor()}`}>
