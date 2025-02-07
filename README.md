@@ -43,9 +43,9 @@ Build for Android:
 `npx cap open android`
 Alternatively, you can open Android Studio and import the android/ directory as an Android Studio project.
 
-### Republis app
+### Republish app
 1. `npm run build`
-2. `npx cap open android`
+2. `npx cap sync`
 3. Genereate signed APK with Android Studio.
 4. Upload APK to Google Drive.
 5. Download APK from  Google Drive, and install/update from already installed.
