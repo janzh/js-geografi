@@ -23,7 +23,9 @@ const CapitalsPage = () => {
   return (
     <div className="capitalsPage">
       <h1>Gjett landets hovedstad</h1>
-
+      <button className="exit" onClick={() => setChosenCountryCapitals([])}>
+        &#10005;
+      </button>
       <CapitalsGuesser countryCapitals={chosenCountryCapitals} />
     </div>
   );

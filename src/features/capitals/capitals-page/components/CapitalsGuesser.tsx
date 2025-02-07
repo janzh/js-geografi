@@ -81,7 +81,8 @@ const CapitalsGuesser = ({ countryCapitals }: Props) => {
 
   const guessedAmount = countryCapitals.length - countriesUnanswered.length;
   const guessProportion = guessedAmount / countryCapitals.length;
-  const correctPercentage = Math.ceil((correctCount / guessedAmount) * 100);
+  const correctPercentage =
+    guessedAmount > 0 ? Math.ceil((correctCount / guessedAmount) * 100) : 0;
   const amountCorrectText = `${correctPercentage}% riktige svar`;
 
   const getFeedbackText = () => {

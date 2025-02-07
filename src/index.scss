@@ -20,6 +20,7 @@ body {
 }
 
 button {
+  cursor: pointer;
   background-color: $color-feather-green;
   border: none;
   border-radius: 1rem;
@@ -33,4 +34,8 @@ button {
 
 .blue {
   background-color: #1cb0f6;
+}
+
+.exit {
+  background-color: darkslategray;
 }

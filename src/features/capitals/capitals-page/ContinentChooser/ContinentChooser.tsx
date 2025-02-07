@@ -6,44 +6,36 @@ import countryCapitals, {
 } from "@src/features/capitals/data/country-capitals";
 import { ChangeEvent, useState } from "react";
 
+type ContinentOption = Continent | "ALL";
+
 interface ContinentChooserOption {
-  countries: CountryCapital[];
+  continentOptions: ContinentOption;
   label: string;
 }
 
 const options: ContinentChooserOption[] = [
   {
-    countries: [...countryCapitals],
+    continentOptions: "ALL",
     label: "Alle",
   },
   {
-    countries: [...countryCapitals].filter(
-      (countryCapital) => Continent.AFRICA === countryCapital.continent,
-    ),
+    continentOptions: Continent.AFRICA,
     label: "Afrika",
   },
   {
-    countries: [...countryCapitals].filter(
-      (countryCapital) => Continent.AMERICA === countryCapital.continent,
-    ),
+    continentOptions: Continent.AMERICA,
     label: "Amerika",
   },
   {
-    countries: [...countryCapitals].filter(
-      (countryCapital) => Continent.ASIA === countryCapital.continent,
-    ),
+    continentOptions: Continent.ASIA,
     label: "Asia",
   },
   {
-    countries: [...countryCapitals].filter(
-      (countryCapital) => Continent.EUROPE === countryCapital.continent,
-    ),
+    continentOptions: Continent.EUROPE,
     label: "Europa",
   },
   {
-    countries: [...countryCapitals].filter(
-      (countryCapital) => Continent.OCEANIA === countryCapital.continent,
-    ),
+    continentOptions: Continent.OCEANIA,
     label: "Oseania",
   },
 ];
@@ -59,14 +51,23 @@ const ContinentChooser = ({ submit }: Props) => {
     setSelectedOptionIndex(Number(event.target.value));
   };
 
+  const handleSubmit = () => {
+    const continentOption = options[selectedOptionIndex].continentOptions;
+
+    if (continentOption === "ALL") {
+      submit([...countryCapitals]);
+      return;
+    }
+
+    const countries = [...countryCapitals].filter(
+      (countryCapital) => continentOption === countryCapital.continent,
+    );
+
+    submit(countries);
+  };
+
   return (
-    <form
-      className="continentChooser block"
-      onSubmit={(event) => {
-        event.preventDefault();
-        submit(options[selectedOptionIndex].countries);
-      }}
-    >
+    <form className="continentChooser block" onSubmit={handleSubmit}>
       {options.map((option, index) => (
         <label key={option.label}>
           <input
