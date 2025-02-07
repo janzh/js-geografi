@@ -104,7 +104,7 @@ const CapitalsGuesser = () => {
       return "error";
     }
 
-    if (isAnsweredCorrect) {
+    if (isAnsweredCorrect || !!answer) {
       return "success";
     }
 
