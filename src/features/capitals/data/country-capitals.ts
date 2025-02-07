@@ -185,10 +185,6 @@ const countryCapitals: CountryCapital[] = [
     city: "Addis Abeba",
   },
   {
-    country: "Færøyene",
-    city: "Torshavn",
-  },
-  {
     country: "Fiji",
     city: "Suva",
   },
@@ -467,10 +463,6 @@ const countryCapitals: CountryCapital[] = [
   {
     country: "Montenegro",
     city: "Podgorica",
-  },
-  {
-    country: "Montserrat",
-    city: "Plymouth",
   },
   {
     country: "Mosambik",
