@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const HomePage = () => (
   <div>
-    <h2>Geografi</h2>
+    <h1>Geografi</h1>
     <Link to={`/${RoutePaths.CAPITALS}`}>Hovedsteder</Link>
   </div>
 );

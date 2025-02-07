@@ -67,7 +67,7 @@ const CapitalsGuesser = () => {
     getRandomInt(countryCapitals.length);
     setFeedback("");
     setIsAnsweredCorrectly(undefined);
-    setIsAnswered(undefined);
+    setIsAnswered(false);
   };
 
   const amountGuessedText = `Andel svart: ${countryCapitals.length - countriesUnanswered.length}/${countryCapitals.length}`;
