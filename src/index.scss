@@ -42,3 +42,7 @@ button {
 .exit {
   background-color: darkslategray;
 }
+
+.rotate-left {
+  transform: rotate(180deg);
+}
