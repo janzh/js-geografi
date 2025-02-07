@@ -1,7 +1,7 @@
 import "./CapitalsGuesser.scss";
 
 import ProgressBar from "@src/components/ProgressBar/ProgressBar";
-import countryCapitals from "@src/features/capitals/data/country-capitals";
+import { CountryCapital } from "@src/features/capitals/data/country-capitals";
 import { ChangeEvent, useState } from "react";
 
 const getRandomInt = (max: number) => Math.floor(Math.random() * max);
@@ -12,7 +12,11 @@ enum AnswerMode {
   SUBMITTED_WRONG,
 }
 
-const CapitalsGuesser = () => {
+interface Props {
+  countryCapitals: CountryCapital[];
+}
+
+const CapitalsGuesser = ({ countryCapitals }: Props) => {
   const [answer, setAnswer] = useState("");
 
   const isAnswered = !!answer;

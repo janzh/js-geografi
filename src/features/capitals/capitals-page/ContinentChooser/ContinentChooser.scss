@@ -1,0 +1,20 @@
+.continentChooser {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    cursor: pointer;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+
+    input {
+      margin-right: 1rem;
+      height: 2rem;
+      width: 2rem;
+    }
+  }
+
+  button {
+    margin-top: 2rem;
+  }
+}
