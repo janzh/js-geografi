@@ -94,7 +94,7 @@ const countryCapitals: CountryCapital[] = [
   },
   {
     country: "Brasil",
-    city: "Brasília",
+    city: "Brasilia",
   },
   {
     country: "Brunei",
