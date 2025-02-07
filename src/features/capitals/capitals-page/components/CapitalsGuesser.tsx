@@ -5,11 +5,19 @@ import { ChangeEvent, useState } from "react";
 
 const getRandomInt = (max: number) => Math.floor(Math.random() * max);
 
+enum AnswerMode {
+  UNANSWERED,
+  SUBMITTED_CORRECT,
+  SUBMITTED_WRONG,
+}
+
 const CapitalsGuesser = () => {
-  const [isAnsweredCorrectly, setIsAnsweredCorrectly] = useState<
-    boolean | undefined
-  >(undefined);
-  const [isAnswered, setIsAnswered] = useState(false);
+  const [answerMode, setAnswerMode] = useState(AnswerMode.UNANSWERED);
+
+  const isAnsweredWrongly = AnswerMode.SUBMITTED_WRONG === answerMode;
+  const isAnsweredCorrect = AnswerMode.SUBMITTED_CORRECT === answerMode;
+  const answered = isAnsweredWrongly || isAnsweredCorrect;
+
   const [correctCount, setCorrectCount] = useState(0);
   const [countriesUnanswered, setCountriesUnanswered] =
     useState(countryCapitals);
@@ -18,11 +26,9 @@ const CapitalsGuesser = () => {
   );
 
   const [answer, setAnswer] = useState("");
-  const [feedback, setFeedback] = useState("");
 
   const changeAnswer = (event: ChangeEvent<HTMLInputElement>) => {
     setAnswer(event.target.value);
-    setFeedback("");
   };
 
   const nextAnswer = () => {
@@ -33,31 +39,28 @@ const CapitalsGuesser = () => {
     if (newCountriesUnanswered.length) {
       setCurrentCountryIndex(getRandomInt(newCountriesUnanswered.length));
       setCountriesUnanswered(newCountriesUnanswered);
-    } else {
-      setFeedback("Du har svart på alle verdens land");
     }
 
     setAnswer("");
-    setIsAnswered(false);
+
+    setAnswerMode(AnswerMode.UNANSWERED);
   };
 
   const checkAnswer = () => {
-    if (!isAnswered) {
+    if (answered) {
+      nextAnswer();
+    } else {
       const answerIsCorrect =
         countriesUnanswered[currentCountryIndex]?.city?.toLowerCase() ===
         answer.toLowerCase();
 
       if (answerIsCorrect) {
-        setFeedback("Riktig svar!");
         setCorrectCount(correctCount + 1);
-      } else {
-        setFeedback("Feil svar!");
-      }
 
-      setIsAnsweredCorrectly(answerIsCorrect);
-      setIsAnswered(true);
-    } else {
-      nextAnswer();
+        setAnswerMode(AnswerMode.SUBMITTED_CORRECT);
+      } else {
+        setAnswerMode(AnswerMode.SUBMITTED_WRONG);
+      }
     }
   };
 
@@ -65,16 +68,31 @@ const CapitalsGuesser = () => {
     setCorrectCount(0);
     setCountriesUnanswered(countryCapitals);
     getRandomInt(countryCapitals.length);
-    setFeedback("");
-    setIsAnsweredCorrectly(undefined);
-    setIsAnswered(false);
+
+    setAnswerMode(AnswerMode.UNANSWERED);
   };
 
   const amountGuessedText = `Andel svart: ${countryCapitals.length - countriesUnanswered.length}/${countryCapitals.length}`;
   const amountCorrectText = `Andel riktige: ${correctCount}/${countryCapitals.length}`;
 
-  const submitButtonText = () => {
-    if (isAnswered) {
+  const getFeedbackText = () => {
+    if (isAnsweredWrongly) {
+      return "Feil";
+    }
+
+    if (isAnsweredCorrect) {
+      return "Riktig";
+    }
+
+    if (!countriesUnanswered.length) {
+      return "Du har svart på alle verdens land";
+    }
+
+    return "";
+  };
+
+  const getSubmitButtonText = () => {
+    if (answered) {
       return "Fortsett";
     }
 
@@ -82,15 +100,15 @@ const CapitalsGuesser = () => {
   };
 
   const getAnswerSubmitColor = () => {
-    if (!answer) {
-      return "disabled";
-    }
-
-    if (isAnswered && !isAnsweredCorrectly) {
+    if (isAnsweredWrongly) {
       return "error";
     }
 
-    return "success";
+    if (isAnsweredCorrect) {
+      return "success";
+    }
+
+    return "disabled";
   };
 
   return (
@@ -106,15 +124,15 @@ const CapitalsGuesser = () => {
         <label htmlFor="input-answer">Hovedstad:</label>
         <input id="input-answer" onChange={changeAnswer} value={answer} />
         <div className={`answer-submit ${getAnswerSubmitColor()}`}>
-          {feedback && (
+          {answered && (
             <div className="answer-submit__feedback">
-              <p>{feedback}</p>
-              {!isAnsweredCorrectly && (
+              <p>{getFeedbackText()}</p>
+              {isAnsweredWrongly && (
                 <small>{`Riktig svar er: ${countriesUnanswered[currentCountryIndex]?.city}`}</small>
               )}
             </div>
           )}
-          <button type="submit">{submitButtonText()}</button>
+          <button type="submit">{getSubmitButtonText()}</button>
         </div>
       </form>
       <section className="block">
@@ -122,7 +140,9 @@ const CapitalsGuesser = () => {
         <p>{amountCorrectText}</p>
       </section>
       <section className="block">
-        <button onClick={reset}>Start på nytt</button>
+        <button className="blue" onClick={reset}>
+          Start på nytt
+        </button>
       </section>
     </div>
   );

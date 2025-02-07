@@ -1,3 +1,5 @@
+$color-feather-green: #58cc02;
+
 body {
   background-color: Canvas;
   color: CanvasText;
@@ -5,6 +7,7 @@ body {
 }
 
 .app {
+  color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -25,12 +28,16 @@ input {
 }
 
 button {
-  background-color: green;
+  background-color: $color-feather-green;
   border: none;
-  color: white;
+  color: black;
   padding: 15px 2rem;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 1.5rem;
+}
+
+.blue {
+  background-color: #1cb0f6;
 }

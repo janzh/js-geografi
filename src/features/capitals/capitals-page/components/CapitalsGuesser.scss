@@ -22,27 +22,32 @@
   border-radius: 1rem;
   align-items: center;
 
+  //background-color: #4c4c4c;
+
   button {
     align-self: flex-start;
   }
 
   &.success {
-    border-color: green;
+    border-color: #58cc02;
+    color: #58cc02;
     button {
-      background-color: green;
+      background-color: #58cc02;
     }
   }
 
   &.error {
-    border-color: red;
+    border-color: #e53838;
+    color: #e53838;
     button {
-      background-color: red;
+      background-color: #e53838;
     }
   }
 
   &.disabled {
+    border-color: #4b4b4b;
     button {
-      background-color: grey;
+      background-color: #4b4b4b;
     }
   }
 
