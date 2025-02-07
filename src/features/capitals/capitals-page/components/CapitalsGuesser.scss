@@ -32,25 +32,31 @@
   }
 
   &.success {
-    border-color: #58cc02;
-    color: #58cc02;
+    $color-succecss: #58cc02;
+
+    border-color: $color-succecss;
+    color: $color-succecss;
     button {
-      background-color: #58cc02;
+      background-color: $color-succecss;
     }
   }
 
   &.error {
-    border-color: #e53838;
-    color: #e53838;
+    $color-error: #e53838;
+
+    border-color: $color-error;
+    color: $color-error;
     button {
-      background-color: #e53838;
+      background-color: $color-error;
     }
   }
 
   &.disabled {
-    border-color: #4b4b4b;
+    $color-succecss: #6f6f6f;
+
+    border-color: $color-succecss;
     button {
-      background-color: #4b4b4b;
+      background-color: $color-succecss;
     }
   }
 

@@ -1,5 +1,6 @@
 import "./CapitalsGuesser.scss";
 
+import ProgressBar from "@src/components/ProgressBar/ProgressBar";
 import countryCapitals from "@src/features/capitals/data/country-capitals";
 import { ChangeEvent, useState } from "react";
 
@@ -72,7 +73,9 @@ const CapitalsGuesser = () => {
     setAnswerMode(AnswerMode.UNANSWERED);
   };
 
-  const amountGuessedText = `Andel svart: ${countryCapitals.length - countriesUnanswered.length}/${countryCapitals.length}`;
+  const amountGuessed =
+    (countryCapitals.length - countriesUnanswered.length) /
+    countryCapitals.length;
   const amountCorrectText = `Andel riktige: ${correctCount}/${countryCapitals.length}`;
 
   const getFeedbackText = () => {
@@ -120,6 +123,7 @@ const CapitalsGuesser = () => {
           checkAnswer();
         }}
       >
+        <ProgressBar progress={amountGuessed} />
         <p>{countriesUnanswered[currentCountryIndex].country}</p>
         <label htmlFor="input-answer">Hovedstad:</label>
         <input id="input-answer" onChange={changeAnswer} value={answer} />
@@ -136,7 +140,6 @@ const CapitalsGuesser = () => {
         </div>
       </form>
       <section className="block">
-        <p>{amountGuessedText}</p>
         <p>{amountCorrectText}</p>
       </section>
       <section className="block">
